@@ -1,5 +1,5 @@
 import Alert from '../alert'
-import Footer from '../footer'
+import Header from '../header';
 import Meta from '../meta'
 
 export default function Layout({ preview, children }) {
@@ -9,8 +9,8 @@ export default function Layout({ preview, children }) {
       {preview && (
         <Alert />
       )}
+      <Header />
       <main>{children}</main>
-      <Footer />
     </>
   )
 }

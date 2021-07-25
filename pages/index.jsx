@@ -1,9 +1,9 @@
+import Head from 'next/head';
+import { getAllPostsForHome } from '../lib/api';
 import Container from '../components/container';
 import MoreStories from '../components/more-stories';
 import HeroPost from '../components/hero-post';
 import Layout from '../components/layout';
-import { getAllPostsForHome } from '../lib/api';
-import Head from 'next/head';
 
 export default function Index({ preview, allPosts }) {
   const heroPost = allPosts[0]
@@ -13,13 +13,15 @@ export default function Index({ preview, allPosts }) {
       <Layout preview={preview}>
         <Head>
           <title>Battered Baggage | A Travel Blog</title>
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com" rel="preconnect" />
+          <link crossOrigin href="https://fonts.gstatic.com" rel="preconnect" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Alegreya&family=Karla&display=swap"
             rel="stylesheet"
-          /> 
+          />
         </Head>
         <Container>
+          <h1 className="hero--home">Battered Baggage is a travel blog and mental health manifesto.</h1>
           {heroPost && (
             <HeroPost
               title={heroPost.title}
